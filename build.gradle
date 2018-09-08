@@ -1,0 +1,45 @@
+buildscript {
+  ext {
+    springBootVersion = "2.0.4.RELEASE"
+    springDataVersion = "2.0.9.RELEASE"
+    hibernateValidatorVersion = "6.0.9.Final"
+    awsJavaSdkVersion = "1.11.301"
+    junitVersion="4.12"
+    mockitoVersion="2.13.0"
+    cdiVersion="1.2"
+    slf4jTestVersion="1.2.0"
+    sqllite4javaVersion="1.0.392"
+
+    projectBuildSourceEncoding = "UTF-8"
+    projectReportSoutputEncoding = "UTF-8"
+
+  }
+
+  repositories {
+    mavenCentral()
+  }
+
+  dependencies {
+    classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+  }
+}
+apply plugin: "java"
+apply plugin: "idea"
+apply plugin: "org.springframework.boot"
+
+version = "0.0.1-SNAPSHOT"
+sourceCompatibility = 1.8
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter:${springBootVersion}",
+            "org.springframework.data:spring-data-commons:${springDataVersion}",
+            "com.amazonaws:aws-java-sdk:${awsJavaSdkVersion}"
+
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
+
+
